@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.m1-auto {
+  justify-content: end;
+}
+.box{
+ display:inline-block;
+ justify-content:center;
+ font-family: 'Times New Roman', Times, serif;
+ border:1px solid black;
+ width:500px;
+ height:270px;
+ padding:10px;
+ margin:10px;
+  
+}
+.admin_mails{
+  margin-bottom: 10px;
+  text-align:left;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+.buttons{
+  justify-content: flex-end;
+  position:relative;
+  left:170px;
+  top:75px;
+  
+}
+.days{
+  font-size:20px;
+}
+.mails{
+  display:flexbox;
+  overflow-wrap: break-word;
+  
+}
+.confirm{
+  margin-top: 10px;
+}
+.confirm_box
+{
+  
+  position:relative;
+  top:100px;
+}
+.no_mail{
+  padding:10px;
+}
+
+
+.grant{
+  margin-right:5px;
+  margin-bottom: 5px;
+}
+.deny{
+  margin-left:5px;
+  margin-bottom:5px;
+}
+.update{
+  margin-top: 10px;
+}
+.edit_admin{
+  font-family: 'Times New Roman', Times, serif;
+}
+.past{
+  font-family: 'Times New Roman', Times, serif;
+  width:860px;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  left:230px;
+
+}
+.pending{
+  font-family: 'Times New Roman', Times, serif;
+  width:860px;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  left:230px;
+}
+.head{
+  display:flex;
+  justify-content: space-between;
+  padding:10px;
+}
+.welcome{
+  padding:10px 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display:row;
+  flex-direction:row;
+}
+.compose{
+ font-family: 'Times New Roman', Times, serif;
+  margin-left: 10px;
+  width:200px;
+  height:70px;
+}
+.primary{
+  margin-top: 10px;
+}
+.send{
+  margin-right: 10px;
+  margin-top:10px;
+}
+.user_name{
+  background-color: #1f0303; /* set the background color of the box */
+  border: 1px solid #999; /* add a border to the box */
+  border-radius: 10px 10px 10px 10px;
+  color: white;
+  height:50px;
+  padding: 10px; /* add padding to the box */
+  display:flex;
+  position: relative; 
+}
+.cancel{
+  margin-left:10px;
+  margin-top:10px;
+}
+.admin_box{
+  width:500px;
+}
+.sender_days{
+  display:flex;
+  flex-direction:row; 
+  padding:10px 10px;
+  height:60px;
+  
+}
+.send_to{
+  width:60px;
+  margin-right: 10px;
+  text-align:end;
+}
+.days{
+  width:60px;
+  margin-right: 10px;
+}
+.form_compose{
+  width:100%;
+}
+.table-container{
+  height: 205px;
+  overflow: auto;
+}
+.text_area{
+  width:80%;
+  overflow: auto;
+}
+/* .table-responsive {
+  overflow-x: auto;
+  width:500px;
+  padding:10px 10px;
+  position:relative;
+  left:300px;
+  top:-100px;
+  resize: right;
+  
+} */
+/* 
+@media (max-width: 1050px) {
+  .table-responsive {
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    table-layout:shrink;
+   
+   
+  }
+
+  .table-responsive > table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:500px;
+  }
+
+  .table-responsive > table > thead {
+    display: none;
+  }
+
+  .table-responsive > table > tbody > tr {
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-responsive > table > tbody > tr:last-child {
+    border-bottom: none;
+  }
+
+  .table-responsive > table > tbody > tr > td {
+    display: block;
+
+    
+    text-align: right;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-responsive > table > tbody > tr > td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+} */
+/* .form_box{
+  width:550px;
+  border:1px solid black;
+ align-self: flex-end;
+  position:relative;
+  left:430px;
+  top:200px;
+  padding:10px;
+  
+}
+@media (min-width: 1050px) {
+  Form {
+    flex-direction:column;
+    justify-content: space-between;
+    width:200px;
+    overflow:visible;
+  }
+} */

@@ -1,0 +1,26 @@
+.list-group a:hover{
+    color:black;
+    background-color: white;
+}
+.compose{
+    position:relative;
+    top:5px;
+}
+.sidebar{
+    position:relative;
+    top:-150px;
+}
+.past_mail{
+    text-decoration: none;
+}
+.pending_mail{
+    text-decoration: none;
+}
+.vl{
+    border-left: 1px solid rgb(0, 4, 0);
+   position:relative;
+    left:300px;
+    top:50px;
+    height:220px;
+
+}

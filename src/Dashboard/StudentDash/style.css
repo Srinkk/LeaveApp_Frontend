@@ -1,0 +1,96 @@
+.list-group a:hover{
+    color:black;
+    background-color: white;
+}
+.compose{
+    position:relative;
+    top:5px;
+}
+.sidebar{
+    position:relative;
+    top:-150px;
+}
+.past_mail{
+    text-decoration: none;
+}
+.pending_mail{
+    text-decoration: none;
+}
+.vl{
+    border-left: 1px solid rgb(0, 4, 0);
+   position:relative;
+    left:300px;
+    top:50px;
+    height:220px;
+
+}
+.Table{
+    width:800px;
+    justify-content: center;
+    position:relative;
+    right:-500px;
+    top:-350px;
+}
+.heading{
+    position:relative;
+    top:-380px;
+    left:-170px;
+    color:black;
+}
+.table-responsive {
+    overflow-x: auto;
+    width:350px;
+    padding:10px 10px;
+    position:relative;
+    left:-50px;
+    top:-300px;
+    resize: right;
+    
+  }
+  
+  @media (max-width: 1050px) {
+    .table-responsive {
+      display: inline-block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      table-layout:shrink;
+     
+     
+    }
+  
+    .table-responsive > table {
+      display: block;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      width:500px;
+    }
+  
+    .table-responsive > table > thead {
+      display: none;
+    }
+  
+    .table-responsive > table > tbody > tr {
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .table-responsive > table > tbody > tr:last-child {
+      border-bottom: none;
+    }
+  
+    .table-responsive > table > tbody > tr > td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .table-responsive > table > tbody > tr > td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
