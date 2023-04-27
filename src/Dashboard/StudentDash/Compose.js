@@ -14,7 +14,7 @@ const Compose = () => {
 
 	const [admins, setAdmins] = useState([])
 	const [subject, setSubject] = useState('')
-	const [receiver, setReceiver] = useState('')
+	const [receiverId, setReceiverId] = useState('')
 	const [days, setDays] = useState('')
 	const [body, setBody] = useState('')
 	const [err, setErr] = useState(null)
@@ -36,7 +36,7 @@ const Compose = () => {
 	}, [studentId])
 
 	const handleSelectAdmin = (e) => {
-		setReceiver(e.target.value)
+		setReceiverId(e.target.value)
 	}
 
 	const handleSubmit = () => {
@@ -44,8 +44,8 @@ const Compose = () => {
 				subject,
 				days,
 				body,
-				sender: studentId,
-				receiver
+				senderId: studentId,
+				receiverId:receiverId
 			})
 			.then(response => {
 				const data = response.data
@@ -80,7 +80,7 @@ const Compose = () => {
 
 							<div className="sender_days">
 								<Form.Label><h6 className='send_to'>Send to</h6></Form.Label>
-								<Form.Select  onChange={handleSelectAdmin}>
+								<Form.Select value={receiverId}  onChange={handleSelectAdmin}>
 										{admins ? (
 										admins.map(admin=>(
 						
