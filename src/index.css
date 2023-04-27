@@ -35,7 +35,7 @@ code {
   justify-content: flex-end;
   position:relative;
   left:170px;
-  top:75px;
+  top:50px;
   
 }
 .days{
@@ -61,10 +61,12 @@ code {
 
 
 .grant{
+ 
   margin-right:5px;
   margin-bottom: 5px;
 }
 .deny{
+  
   margin-left:5px;
   margin-bottom:5px;
 }
@@ -156,8 +158,12 @@ code {
   overflow: auto;
 }
 .text_area{
-  width:80%;
-  overflow: auto;
+ 
+  height:50px;
+  width:200px;
+  overflow-wrap: break-word;
+  overflow:auto;
+  
 }
 /* .table-responsive {
   overflow-x: auto;
