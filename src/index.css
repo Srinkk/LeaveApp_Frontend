@@ -95,11 +95,11 @@ code {
 }
 .pending{
   font-family: 'Times New Roman', Times, serif;
-  width:860px;
+  width:884px;
   justify-content: center;
   align-items: center;
   position:relative;
-  left:230px;
+  left:218px;
 }
 .head{
   display:flex;
