@@ -25,6 +25,9 @@ code {
  margin:10px;
   
 }
+.received_table{
+  height:20%;
+}
 .admin_mails{
   margin-bottom: 10px;
   text-align:left;
@@ -35,8 +38,13 @@ code {
   justify-content: flex-end;
   position:relative;
   left:170px;
-  top:50px;
+  bottom:20px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
   
+}
+.headings{
+  height:20%;
 }
 .days{
   font-size:20px;
@@ -159,7 +167,7 @@ code {
 }
 .text_area{
  
-  height:50px;
+  height:120px;
   width:200px;
   overflow-wrap: break-word;
   overflow:auto;
