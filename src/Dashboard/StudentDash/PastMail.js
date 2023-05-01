@@ -38,22 +38,23 @@ const PastMail = ({ senderId }) => {
         }
 
         return (
-            <Button onClick={() => handleDelete()}><FontAwesomeIcon icon={ faTrash }/></Button>
+            <Button variant='secondary' onClick={() => handleDelete()}><FontAwesomeIcon icon={ faTrash }/></Button>
         )
     }
 
     return (
+        <div className='bagc'>
         <div className='conatiner'>
-        <h4>Your Past Mails</h4>
+        <h4><div className='mail_head'>Your Past Applications</div></h4>
          <div className='table-container'>
-        <Table striped bordered hover >
+        <Table striped  hover >
             {mails?.length ? (
                 <thead>
                     <tr>
-                        <th>Subject</th>
-                        <th>Status</th>
-                        <th>Concerned Admin</th>
-                        <th>Delete</th>
+                        <th className='t_head'>Subject</th>
+                        <th className='t_head'>Status</th>
+                        <th className='t_head'>Concerned Admin</th>
+                        <th className='t_head'>Delete</th>
                     </tr>
                 </thead>
             ) : <></>}
@@ -63,23 +64,24 @@ const PastMail = ({ senderId }) => {
                     <tbody>
             
                         <tr key={mail._id}>
-                            <td>{mail.subject}</td>
-                            <td>{mail.status}</td>
-                            <td>{mail.receiverName}</td>
+                            <td><p className='t_cont'>{mail.subject}</p></td>
+                            <td><p className='t_cont'>{mail.status}</p></td>
+                            <td><p className='t_cont'>{mail.receiverName}</p></td>
                             <td><DeleteMailButton mail_id={mail._id}/></td>
                         </tr>
 
                     </tbody>
             )) 
             ): (
-                <h5 className='no_mail'>No mails found.</h5>
+                <h5 className='no_mail'>No applications found.</h5>
             )}
             </Table>
             </div> 
             
         </div>
+        </div>
         
     );
 };
 
-export default PastMail
+export default PastMail
