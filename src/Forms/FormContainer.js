@@ -6,13 +6,18 @@ import Row from 'react-bootstrap/esm/Row';
 
 export const FormContainer = ({children}) => {
   return (
-    <Container width='600px'>
+    <div className='background'>
+    <div className='overlay'>
+    <Container width='550px' height='650px'>
         <Row className='justify-content-md-center'>
             <Col sm={10} md={5}>
+              <div className='form'>
               {children}
+              </div>
             </Col>
         </Row>
     </Container>
+    </div>
+    </div>
   )
 }
-
