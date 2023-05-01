@@ -52,59 +52,69 @@ const EditStudent = () => {
 
     return (
         <div>
-            <NavBarDashBoard
-                student_id={_id}
-                admin_id = {''}
-            />
-            <FormContainer>
-                <h2>Edit Profile</h2>
-                <Form.Group controlId="id">
-                    <Form.Label><h4>Student Id</h4></Form.Label>
-                    <Form.Control
-                        type='text'
-                        name="id"
-                        value={id}
-                        onChange={(e) => setId(e.target.value)}
-                    />
-                </Form.Group>
+        <div className='bagc'>
+        <NavBarDashBoard
+            student_id={_id}
+            admin_id = {''}
+        />
+        <FormContainer>
+            <h2><div className='head1'>Edit Profile</div></h2>
+            <Form.Group controlId="id">
+            <div className='subhead1'>
+                <Form.Label><h4>Student Id</h4></Form.Label>
+                <Form.Control
+                    type='text'
+                    name="id"
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
+                />
+                </div>
+            </Form.Group>
 
-                <Form.Group controlId="name">
-                    <Form.Label><h4>Name</h4></Form.Label>
-                    <Form.Control
-                        type='text'
-                        name="name"
-                        value={name}
-                        onChange={(e)=>setName(e.target.value)}
-                    />
-                </Form.Group>
+            <Form.Group controlId="name">
+            <div className='subhead1'>
+                <Form.Label><h4>Name</h4></Form.Label>
+                <Form.Control
+                    type='text'
+                    name="name"
+                    value={name}
+                    onChange={(e)=>setName(e.target.value)}
+                />
+                </div>
+            </Form.Group>
 
-                <Form.Group controlId="password">
-                    <Form.Label><h4>Password</h4></Form.Label>
-                    <Form.Control
-                        type='password'
-                        placeholder="password"
-                        name="password"
-                        value={password}
-                        onChange={(e)=>setPassword(e.target.value)}
-                    />
-                </Form.Group>
+            <Form.Group controlId="password">
+            <div className='subhead1'>
+                <Form.Label><h4>Password</h4></Form.Label>
+                <Form.Control
+                    type='password'
+                    placeholder="password"
+                    name="password"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
+                </div>
+            </Form.Group>
 
-                <Form.Group controlId="inst_name">
-                    <Form.Label><h4>Institution Name</h4></Form.Label>
-                    <Form.Control
-                        type='text'
-                        name="inst_name"
-                        value={inst_name}
-                        onChange={(e)=>setInst_Name(e.target.value)}
-                    />
-                </Form.Group>
+            <Form.Group controlId="inst_name">
+            <div className='subhead1'>
+                <Form.Label><h4>Institution Name</h4></Form.Label>
+                <Form.Control
+                    type='text'
+                    name="inst_name"
+                    value={inst_name}
+                    onChange={(e)=>setInst_Name(e.target.value)}
+                />
+                </div>
+            </Form.Group>
 
-                {err?.length ? (<p>{err}</p>) : <></>}	
+            {err?.length ? (<p>{err}</p>) : <></>}	
 
-                <Button onClick={handleUpdate}>Update Details</Button>
+            <Button onClick={handleUpdate}><div className='subhead1'>Update Details</div></Button>
 
-            </FormContainer>
+        </FormContainer>
         </div>
+    </div>
     )
 }
 
