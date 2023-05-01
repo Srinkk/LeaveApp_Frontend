@@ -35,40 +35,46 @@ const AdminLogin = () => {
 	}
 
 	return (
-		<div>
-			<NavBar/>
-			<div className='justify-content-center'>
-				<FormContainer>
-				<h2>Login with us</h2>
-				<h4>Don't have an account?<Link to='/signup/admin'>Signup</Link></h4>
-				<h5>Are you a student?<Link to='/login'>go back</Link></h5>
-				
-				<hr className='md-3'/>
-				<Form method='POST'>
-					<Form.Group controlId = 'id'></Form.Group>
-					<Form.Label><h5>Admin Id</h5></Form.Label>        
-					<Form.Control
-					type='text' placeholder='college/school id' name = 'id' value = {id}
-					onChange = {e => setId(e.target.value)}>
-					</Form.Control>
-				
-					<Form.Group controlId='pwd'></Form.Group>
-					<Form.Label><h5>Password</h5></Form.Label>        
-					<Form.Control
-					type='password' placeholder='must be 8-20 letter long' value={password} onChange={e=>setPassword(e.target.value)}>
-					</Form.Control>
-					
-				</Form>
-				<hr className='md-3'/>
-
-				{err?.length ? (<p>{err}</p>) : <></>}
-
-				<Button variant='secondary' onClick={handleSubmit}>Login</Button>
-
-				</FormContainer>
+	<div>
+			
+	<NavBar/>
+	<div className='justify-content-center'>
+	<div className='bagc'>
+		<FormContainer>
+		<h2><div className='form_head'>Login</div></h2>
+		<h4><div className='form_head'>Don't have an account? <Link to='/signup/admin'>Signup</Link></div></h4>
+		<h5><div className='form_head'>Are you a student? <Link to='/login'>Go back</Link></div></h5>
+		
+		<hr className='md-3'/>
+		<Form method='POST'>
+		<div className='subhead1'>
+			<Form.Group controlId = 'id'></Form.Group>
+			<Form.Label><h5>Admin Id</h5></Form.Label>        
+			<Form.Control className='form_field'
+			type='text' placeholder='college/school id' name = 'id' value = {id}
+			onChange = {e => setId(e.target.value)}>
+			</Form.Control>
+		
+			<Form.Group controlId='pwd'></Form.Group>
+			<Form.Label><h5>Password</h5></Form.Label>        
+			<Form.Control className='form_field'
+			type='password' placeholder='must be 8-20 letter long' value={password} onChange={e=>setPassword(e.target.value)}>
+			</Form.Control>
 			</div>
-		</div>
-	)
+			
+		</Form>
+		<hr className='md-3'/>
+
+		{err?.length ? (<p>{err}</p>) : <></>}
+
+		<Button variant='secondary' onClick={handleSubmit}><div className='subhead1'>Login</div></Button>
+
+		</FormContainer>
+	</div>
+	</div>
+</div>
+)
+		
 }
 
 export default AdminLogin
