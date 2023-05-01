@@ -26,18 +26,21 @@ function NavBarDashBoard({ student_id, admin_id }) {
 	}
 
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+		
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
 		<Container>
-			<Navbar.Brand >LeaveApp</Navbar.Brand>
+			<Navbar.Brand ><div className='head1'>LeaveApp</div></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 			<Nav className="me-auto">
 				<Nav.Link href="/home"><u>Home</u></Nav.Link>
 				<Nav.Link href="/about"><u>About</u></Nav.Link>
 				<Nav.Link href="/manual"><u>How to use</u></Nav.Link>
+			
 			</Nav>
 			
 			<Nav>
+			<div className='subhead1'>
 				<NavDropdown title="User Options" id="basic-nav-dropdown">
 				<EditPath 
 					admin_id={admin_id}
@@ -54,10 +57,12 @@ function NavBarDashBoard({ student_id, admin_id }) {
 				<NavDropdown.Item href="/home">Logout</NavDropdown.Item>
 				<NavDropdown.Divider />
 				</NavDropdown>
+				</div>
 			</Nav>
 			</Navbar.Collapse>
 		</Container>
 		</Navbar>
+		
 	);
 }
 export default NavBarDashBoard
