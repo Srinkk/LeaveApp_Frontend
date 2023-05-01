@@ -39,56 +39,60 @@ const AdminSignUp = () => {
 	} 
    	
 	return (
-		<div>
+	<div>
 		<NavBar/>
+		<div className='bagc'>
 		<div className='justify-content-center'>
 		<FormContainer>
-		<h2>SignUp with Us</h2>
-		<h4>Already have an account?<Link to='/login/admin'>Login</Link></h4>
+		<h2><div className='form_head'>SignUp</div></h2>
+		<h4><div className='form_head'>Already have an account?<Link to='/login/admin'>Login</Link></div></h4>
 		
 		<hr className='md-3'/>
 		<Form method='POST'>
+		<div className='subhead1'>
 			<Form.Group controlId='id'></Form.Group>
 			<Form.Label><h5>Admin Id</h5></Form.Label>        
-			<Form.Control
+			<Form.Control className='form_field'
 			type='text' placeholder='Admin Id' name='id' value={id}
 			onChange={e=>setId(e.target.value)}>
 			
 			</Form.Control>
 			<Form.Group controlId='name'></Form.Group>
 			<Form.Label><h5>Name</h5></Form.Label>        
-			<Form.Control
+			<Form.Control className='form_field'
 			type='text' placeholder='name' value={name} onChange={e=>setName(e.target.value)}>
 			</Form.Control>
 			<Form.Group controlId='c_id'></Form.Group>
 			<Form.Label><h5>College Name</h5></Form.Label>        
-			<Form.Control
+			<Form.Control className='form_field'
 			type='text' placeholder='e.g.: University of Engineering & Management - Kolkata' value={inst_name} onChange={(e)=>setInst_Name(e.target.value)}>
 			</Form.Control>
 			
 			<Form.Group controlId='pwd'></Form.Group>
 			<Form.Label><h5>Password</h5></Form.Label>        
-			<Form.Control
+			<Form.Control className='form_field'
 			type='password' placeholder='must be 8-20 letter long' value={password} onChange={e=>setPassword(e.target.value)}>
 			</Form.Control>
 
 			<Form.Group controlId='code'></Form.Group>
 			<Form.Label><h5>Institution Code</h5></Form.Label>        
-			<Form.Control
+			<Form.Control className='form_field'
 			type='text' placeholder='School/College Special Code' value={code} onChange={e=>setCode(e.target.value)}>
 			</Form.Control>
-			
+		</div>	
 		</Form>
 		<hr className='md-3'/>
 
 		{err?.length ? (<p>{err}</p>) : <></>}	
 
-		<Button variant='secondary' onClick={handleSubmit}>SignUp</Button>
+		<Button variant='secondary' onClick={handleSubmit}><div className='subhead1'>SignUp</div></Button>
 
 
 		</FormContainer>
 		</div>
 		</div>
+		</div>
+		
 		
 	)
 }
