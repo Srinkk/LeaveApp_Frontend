@@ -53,44 +53,47 @@ const PendingMail = ({ senderId, senderName }) => {
     }
 
     return (
+        <div className='bagc'>
         <div className='container'>
-            <h4>Your Pending Applications</h4>
+            <h4><div className='mail_head'>Your Pending Applications</div></h4>
             <div className='table-container'>
-            <Table striped bordered hover >
+            <Table striped  hover >
                 
-                {mails ? (
+                {mails?.length ? (
                     <thead>
                         <tr>
-                            <th>Subject</th>
-                            <th>Status</th>
-                            <th>Sent to</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                    
+                            <th className='t_head'>Subject</th>
+                            <th className='t_head'>Status</th>
+                            <th className='t_head'>Sent to</th>
+                            <th className='t_head'>Edit</th>
+                            <th className='t_head'>Delete</th>
                         </tr>
                     </thead>
                 ) : <></>}
                         
-                {mails?(
+                {mails?.length ?(
                     mails.map(mail=>(
                         <tbody>
                                 <tr key={mail._id}>
-                                    <td>{mail.subject}</td>
-                                    <td>{mail.status}</td>
-                                    <td>{mail.receiverName}</td>
+                                    <td ><p className='t_cont'>{mail.subject}</p></td>
+                                    <td ><p className='t_cont'>{mail.status}</p></td>
+                                    <td ><p className='t_cont'>{mail.receiverName}</p></td>
                                     <td ><Button variant='secondary' onClick={() => {navigate('/student/editmail', { state: { senderId: senderId, senderName: senderName, mail_id: mail._id } }) }}><FontAwesomeIcon icon={faPenToSquare}/></Button></td>
                                     <td ><DeleteMailButton  mail_id={mail._id}/></td>
                                                                             
                                 </tr>
                         </tbody>
                         ))
-                ) : <h5  className='no_mail'>No pending mails found</h5>}
+                ) : <h5  className='no_mail'>No pending applications found</h5>}
             </Table>
             </div>
 
             
-                
+         </div>  
         </div>
     );
+    
 }
 
 export default PendingMail
