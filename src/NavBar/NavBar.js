@@ -7,26 +7,31 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
+      
       <Container>
-        <Navbar.Brand >LeaveApp</Navbar.Brand>
+        <Navbar.Brand><div className='head1'>
+          LeaveApp</div></Navbar.Brand>
+          
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home"><u>Home</u></Nav.Link>
-            <Nav.Link href="/about"><u>About</u></Nav.Link>
-            <Nav.Link href="/manual"><u>How to use</u></Nav.Link>
+            <Nav.Link href="/home"><div ><u>Home</u></div>
+            </Nav.Link>
+            <Nav.Link href="/about"><div ><u>About</u></div></Nav.Link>
+            <Nav.Link href="/manual"><div ><u>How to use</u></div></Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/school"><u>Create An Institute</u></Nav.Link>
+            <Nav.Link href="/school"><div ><u>Create An Institute</u></div></Nav.Link>
             <Nav.Item>|</Nav.Item>
-            <Nav.Link href="/signup"><u>SignUp</u></Nav.Link>
+            <Nav.Link href="/signup"><div ><u>SignUp</u></div></Nav.Link>
             <Nav.Item>|</Nav.Item>
-            <Nav.Link href="/login"><u>Login</u></Nav.Link>
+            <Nav.Link href="/login"><div ><u>Login</u></div></Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
       </Container>
+      
     </Navbar>
   );
 }
