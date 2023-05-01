@@ -35,43 +35,44 @@ const SignUp = () => {
 		
 
 	return (
-		<div>
+		<div className='form_page'>
 			<NavBar/>
+			<div >
 			<div className='justify-content-center'>
 
 				<FormContainer>
-					<h2>SignUp with Us</h2>
-					<h4>Already have an account?<Link to='/login'>Login</Link></h4>
+					<h2><div className='form_head'>SignUp</div></h2>
+					<h4><div className='subhead1'>Already have an account?  <Link to='/login'>Login</Link></div></h4>
 
-					<Button variant='secondary' href='/signup/admin'><h5>Sign up as an admin</h5></Button>
+					<Button variant='secondary' href='/signup/admin'><div className='subhead1'><h5>Sign up as an admin</h5></div></Button>
 					<hr className='md-3'/>
 					<Form method='POST'>
 						<Form.Group controlId='id'></Form.Group>
-						<Form.Label><h5>Id</h5></Form.Label>  
+						<Form.Label ><div className='subhead1'><h5>Id</h5></div></Form.Label>  
 
-						<Form.Control
+						<Form.Control className='form_field'
 						type='digit' placeholder='write enrollment number if you are from UEMK' name='id' value={id}
 						onChange={e=>setId(e.target.value)}>
 						</Form.Control>
 
 						<Form.Group controlId='name'></Form.Group>
-						<Form.Label><h5>Name</h5></Form.Label>   
+						<Form.Label><div className='subhead1'><h5>Name</h5></div></Form.Label>   
 
-						<Form.Control
+						<Form.Control className='form_field'
 						type='text' placeholder='name' name='name' onChange={e=>setName(e.target.value)} value={name}>
 						</Form.Control>
 
 						<Form.Group controlId='inst_name'></Form.Group>
-						<Form.Label><h5>College Name</h5></Form.Label>        
+						<Form.Label><div className='subhead1'><h5>Insitution Name</h5></div></Form.Label>        
 						
-						<Form.Control
+						<Form.Control className='form_field'
 						type='text' placeholder='College Name' name='inst_name' onChange={e=>setInst_Name(e.target.value)} value={inst_name}>
 						</Form.Control>
 
 						<Form.Group controlId='password'></Form.Group>
-						<Form.Label><h5>Password </h5></Form.Label>
+						<Form.Label><div className='subhead1'><h5>Password </h5></div></Form.Label>
 
-						<Form.Control
+						<Form.Control className='form_field'
 						type='password' placeholder='must be 8-20 letter long' name='password' onChange={e=>setPassword(e.target.value)} value={password}>
 						</Form.Control>
 						
@@ -80,12 +81,12 @@ const SignUp = () => {
 
 					{err?.length ? (<p>{err}</p>) : <></>}
 
-					<Button variant='secondary' type='submit' onClick={onSignupClicked}>SignUp</Button>
+					<Button variant='secondary' type='submit' onClick={onSignupClicked}><div>SignUp</div></Button>
 
 				</FormContainer>
 			</div>
+			</div>
 		</div>
-	
 	)
 }
 export default SignUp
