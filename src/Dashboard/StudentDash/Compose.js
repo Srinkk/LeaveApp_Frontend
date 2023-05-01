@@ -29,17 +29,25 @@ const Compose = () => {
 		.then(response => {
 			const admins_received = response.data
 			setAdmins(admins_received)
+			if (admins?.length === 1) {
+				setReceiverId(admins[0]._id)
+			}
 		})
 		.catch(error => {
 			console.log(error)
 		})
-	}, [studentId])
+	})
 
 	const handleSelectAdmin = (e) => {
 		setReceiverId(e.target.value)
 	}
 
 	const handleSubmit = () => {
+		console.log(receiverId)
+		if (!receiverId?.length) {
+            return setErr('Can\'t send application as no receiver can be found.')
+        }
+
 		axios.post("http://localhost:3500/mails", {
 				subject,
 				days,
@@ -65,28 +73,32 @@ const Compose = () => {
 				student_id={studentId}
 				admin_id=''
 			/>
+			
 			<div className="justify-content-center">
-	
-				<div className='container'>
-					<h2>Compose Your Mail</h2>
+			<div className='bagc'>
+				
+					<div className='dashboard_bg'>
+					 <div className='dashboard_overlay'>
+					<h2><div className='form_head1'>Compose your Application</div></h2>
 					<hr className='md-6'/>
 					<div className='container'>
+						
 						<Form method="POST" >
 							<Form.Group controlId="subject"></Form.Group>
-							<Form.Label><h6>Subject</h6></Form.Label>
+							<Form.Label><h6><div className='days2'>Subject</div></h6></Form.Label>
 							<Form.Control
 								type='text' placeholder='write the subject' name='subject' value={subject} onChange={(e)=>setSubject(e.target.value)}
 								></Form.Control>
 
 							<div className="sender_days">
-								<Form.Label><h6 className='send_to'>Send to</h6></Form.Label>
-								<Form.Select value={receiverId}  onChange={handleSelectAdmin}>
-										{admins ? (
+								<Form.Label><h6 className='days'>Send to</h6></Form.Label>
+								<Form.Select value={receiverId} onChange={handleSelectAdmin}>
+										{admins?.length ? (
 										admins.map(admin=>(
 						
 											<option className='admin_box' key={admin._id} value={admin._id} > {admin.name} </option>
 											))
-											) : <option disabled selected>No admin found for this school</option>
+											) : <option disabled selected value=''>No admin found for this school</option>
 										}
 								</Form.Select>
 			
@@ -96,8 +108,8 @@ const Compose = () => {
 								type='digit' name='Days' value={days} onChange={(e)=>setDays(e.target.value)} ></Form.Control>        
 							</div>
 						
-							<Form.Label ><h6>Mail Body</h6></Form.Label>
-							<FloatingLabel controlId="floatingTextarea" label="">
+							<Form.Label className='days1'><h6>Write Your Application</h6></Form.Label>
+							<FloatingLabel controlId="floatingTextarea" label="Write your application">
 				
 								<Form.Control
 									as="textarea"
@@ -109,15 +121,19 @@ const Compose = () => {
 							</FloatingLabel>
 						
 						</Form>
+						
 
 						{ err ? <p>{err}</p> : <></>}
 
-						<Button variant='primary' onClick={handleSubmit} className='send' >Send</Button>
+						<button onClick={handleSubmit} className='send' >Send</button>
 					
-						<Button variant='secondary' onClick={() => {navigate('/student', { state: { student_id: studentId, student_name: studentName } }) }} className='cancel'>Cancel</Button>
+						<button  onClick={() => {navigate('/student', { state: { student_id: studentId, student_name: studentName } }) }} className='cancel'>Cancel</button>
 					</div>
         		</div>
-  			</div>
+				</div>
+				</div>
+				</div>
+  			
 		</>
 	)
 }
