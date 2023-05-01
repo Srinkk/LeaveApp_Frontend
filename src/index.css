@@ -1,4 +1,6 @@
+
 body {
+  height:100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -17,13 +19,27 @@ code {
 .box{
  display:inline-block;
  justify-content:center;
- font-family: 'Times New Roman', Times, serif;
- border:1px solid black;
+ font-family: 'Arial', Times, sans-serif;
+ border: 1px solid rgb(255, 255, 255);
  width:500px;
- height:270px;
+ height:280px;
  padding:10px;
  margin:10px;
   
+}
+.head1{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+   font-size:large;
+   position:relative;
+   left:-20px;
+   color:white
+}
+
+.new1{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-size:large;
+  color: white;
+
 }
 .received_table{
   height:20%;
@@ -38,13 +54,13 @@ code {
   justify-content: flex-end;
   position:relative;
   left:170px;
-  bottom:20px;
+  bottom:30px;
   padding-bottom: 10px;
   margin-bottom: 5px;
   
 }
 .headings{
-  height:20%;
+  height:60%;
 }
 .days{
   font-size:20px;
@@ -87,10 +103,13 @@ code {
 .past{
   font-family: 'Times New Roman', Times, serif;
   width:860px;
+
   justify-content: center;
   align-items: center;
   position:relative;
   left:230px;
+  right:150px;
+  top:5px;
 
 }
 .pending{
@@ -109,21 +128,46 @@ code {
 .welcome{
   padding:10px 10px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color:beige;
+
   display:row;
   flex-direction:row;
 }
 .compose{
- font-family: 'Times New Roman', Times, serif;
-  margin-left: 10px;
-  width:200px;
-  height:70px;
+
+  font-family:'Brush Script MT', cursive;
+  margin-left:60px;
+  width:60px;
+  text-align:end;
+  
+}
+.button{
+  background-color:rgba(18, 48, 18, 0.642);
+  border:#1f0303;
+  color:beige;
+  font-size:x-large;
+  /*padding:15px 32px;*/
+  width:160px;
+  height:60px;
+  text-align:center;
+  text-decoration: none;
+  display:inline-block;
+ box-shadow: rgba(0, 0, 0, 0.5);
+  
 }
 .primary{
   margin-top: 10px;
 }
 .send{
   margin-right: 10px;
-  margin-top:10px;
+  margin-top:20px;
+  width:130px;
+  background-color:beige;
+  height:50px;
+  border-radius: 5px 5px 5px 5px;
+  font-family: sans-serif;
 }
 .user_name{
   background-color: #1f0303; /* set the background color of the box */
@@ -137,36 +181,85 @@ code {
 }
 .cancel{
   margin-left:10px;
-  margin-top:10px;
+  margin-top:20px;
+  width:130px;
+  background-color:beige;
+  height:50px;
+  border-radius: 5px 5px 5px 5px;
+  font-family: sans-serif;
 }
 .admin_box{
-  width:500px;
+  width:300px;
 }
 .sender_days{
   display:flex;
   flex-direction:row; 
-  padding:10px 10px;
-  height:60px;
+  padding-top:15px;
+  height:55px;
+  position:relative;
+  left:-15px;
   
 }
+.days1{
+  font-family:sans-serif;
+  font-size: x-large;
+  margin-top: 25px;
+  position:relative;
+  left:-560px;
+  width:180px;
+ 
+  color:beige;
+}
+.days2{
+  font-family:sans-serif;
+  font-size: large;
+ 
+  position:relative;
+  left:-610px;
+  width:130px;
+ 
+  color:beige;
+}
 .send_to{
-  width:60px;
-  margin-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  width:50px;
+  margin-right:5px;
   text-align:end;
 }
 .days{
-  width:60px;
-  margin-right: 10px;
+  font-family:sans-serif;
+  font-size: large;
+  margin-top: 5px;
+  position:relative;
+  left:-10px;
+
+  width:130px;
+ 
+  color:beige;
+/* line-break: ; */
+  
+  
 }
+
 .form_compose{
   width:100%;
 }
+.form_head1{
+  color:beige;
+}
 .table-container{
-  height: 205px;
+  height:220px;
   overflow: auto;
+  padding-left:20px;
+  padding-bottom:20px;
+  padding-top:10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  background-image:linear-gradient((to bottom right, rgb(228, 212, 212), rgb(112, 181, 204)) );
+  color:beige;
+
 }
 .text_area{
- 
+  color:antiquewhite;
   height:120px;
   width:200px;
   overflow-wrap: break-word;
@@ -250,3 +343,185 @@ code {
     overflow:visible;
   }
 } */
+.background{
+  background-image: url("../public/abstrac2.JPEG");
+  background-color: #409a9a;
+  width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.block{
+  font-style: italic;
+  color: blue;
+}
+.bagc{
+/* background-color: aqua; */
+
+background-size:cover;
+
+}
+.newl{
+  line-break: auto;
+}
+.newl2{
+  line-break:loose;
+}
+.background2{
+  justify-content: first baseline;
+  background-image: url("../public/abstrac2.JPEG");
+  padding-bottom:570px;
+  
+}
+
+.newf{
+  /* text-size-adjust: ; */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+  
+}
+.form_field{
+  margin-bottom: 10px;
+}
+.new2{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:beige;
+  padding-bottom: 300px;
+}
+.form{
+  /* border:1px solid black; */
+  padding:15px 15px 15px 15px;
+  position:relative;
+  top:30px;
+ 
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.form_bg{
+ width:100%;
+ background-color: beige;
+}
+.form_page{
+  width:100%;
+}
+.mail_head{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  font-size:x-large;
+  color:rgb(246, 212, 89);
+  padding-bottom: 10px;
+}
+.dashboard_bg{
+  background-image: url("../public/ab_dash.jpg");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.welcome{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 100;
+  font-size: xx-large;
+   margin-left: 10px;
+}
+.dashboard_overlay{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay{
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.t_head{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+  color:beige;
+
+}
+.t_head2{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:medium;
+  color:beige;
+
+}
+.t_cont{
+  color:beige;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:medium;
+}
+.t_cont2{
+  color:beige;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:medium;
+}
+.update1{
+ padding-top:2px ;
+}
+.home_background{
+  background-image: url("../public/c_students.png");
+  background-color: #409a9a;
+  width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home_overlay{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+.c_h1{
+  width:50%;
+  text-overflow: auto;
+  display:flex;
+  position: relative;
+  left:150px;
+  top:80px;
+  color:white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:80px;
+}
+.home_writing{
+  color:rgb(255, 255, 255);
+  width:100%;
+  text-overflow:auto;
+  text-align: left;
+
+
+  
+}
+.writing_box{
+  /* border:1px solid beige; */
+  width:640px;
+  position: relative;
+  display:flex;
+  align-items: flex-start;
+  left:150px;
+  top:70px;
+  padding-top:10px;
+ 
+}
+.image{
+  background-image:url("../public/c_students.png") ;
+  width:100%;
+  height:100%;
+  display: block;
+}
+.img_box{
+  display:block;
+  width:200px;
+  height:100px;
+}
+
