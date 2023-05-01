@@ -9,7 +9,7 @@ import Table from 'react-bootstrap/Table'
 
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import './style.css'
+// import './style.css'
 
 const StudentDashboard = () => {
       
@@ -25,15 +25,20 @@ const StudentDashboard = () => {
     
 	return (
 		<div>
+			
 			<NavBarDashBoard
 				student_id = {student_id}
 				admin_id = ''
 			/> 
+			<div  className='dashboard_bg'>
+			<div className='dashboard_overlay' >
+			
 			<div className='head'>
 			
-				<h3 className='welcome'>Welcome {student_name}</h3>
+			
+				<p className='welcome'>Welcome {student_name}</p>
 
-				<Button variant='success' className='compose' onClick={ () => {navigate('/student/compose', { state: { studentId: student_id, studentName: student_name } }) }}><h5>Compose New</h5></Button>
+				<button  className='button' onClick={ () => {navigate('/student/compose', { state: { studentId: student_id, studentName: student_name } }) }}><h5>Compose New</h5></button>
 			
 			</div>
 			<div className='container'>
@@ -45,7 +50,7 @@ const StudentDashboard = () => {
 							senderName = {student_name}
 						/>
 					</div>
-          <hr/>
+                   <hr/>
 					<div className='past'>
 						<PastMail 
 							senderId = {student_id}
@@ -53,6 +58,8 @@ const StudentDashboard = () => {
        	 			</div>
           		</div>
         	</div>
+			</div>
+			</div>
 		</div>
 	)
 }
