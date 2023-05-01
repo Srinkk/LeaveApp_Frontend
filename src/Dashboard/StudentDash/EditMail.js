@@ -23,17 +23,6 @@ const EditMail = () => {
     const { senderId, senderName, mail_id } = location.state || {}
 
     useEffect(() => {
-		axios.post("http://localhost:3500/students/sameschooladmins", { _id: senderId })
-		.then(response => {
-			const admins_received = response.data
-			setAdmins(admins_received)
-		})
-		.catch(error => {
-			console.log(error)
-		})
-	}, [senderId])
-
-    useEffect(() => {
         axios.post('http://localhost:3500/mails/find', { _id: mail_id })
             .then(response => {
                 const mail = response.data
@@ -48,8 +37,27 @@ const EditMail = () => {
             })
     }, [])
 
+    useEffect(() => {
+		axios.post("http://localhost:3500/students/sameschooladmins", { _id: senderId })
+		.then(response => {
+			const admins_received = response.data
+			setAdmins(admins_received)
+            if (admins?.length === 1) {
+                setReceiverId(admins[0]._id)
+            }
+		})
+		.catch(error => {
+			console.log(error)
+		})
+	})
+
     const handleUpdate = (e) => {
         e.preventDefault()
+
+        if (!receiverId?.length) {
+            console.log(receiverId)
+            return setErr('Can\'t send application as no receiver can be found.')
+        }
 
         axios.patch('http://localhost:3500/mails', { _id: mail_id, subject, days, body, receiverId })
 
@@ -69,18 +77,22 @@ const EditMail = () => {
 
     return (
         <div>
+            <div className='bagc'>
             <NavBarDashBoard
                 student_id={senderId}
                 admin_id=''
             />
+
        <div className="justify-content-center">
+       <div className='dashboard_bg'>
+	<div className='dashboard_overlay'>
 	
     <div className='container'>
-            <h2>Edit your mail</h2>
+            <h2 className='form_head1'>Edit your mail</h2>
             <hr className='mb-3'/>
             <Form>
                 <Form.Group controlId='subject'></Form.Group>
-                <Form.Label><h4>Subject</h4></Form.Label>
+                <Form.Label className='days'><h4>Subject</h4></Form.Label>
                 <Form.Control 
                     type='text'
                     name='subject'
@@ -90,7 +102,7 @@ const EditMail = () => {
                 
 
                 <Form.Group controlId='days'></Form.Group>
-                <Form.Label><h4>Days</h4></Form.Label>
+                <Form.Label className='days'><h4>Days</h4></Form.Label>
                 <Form.Control 
                     type='digit'
                     name='days'
@@ -100,9 +112,9 @@ const EditMail = () => {
                 
 
                 <Form.Group controlId='body'> </Form.Group>
-                <Form.Label><h4>Mail Body</h4></Form.Label>
+                <Form.Label className='days1'><h4>Application Body</h4></Form.Label>
 
-                <FloatingLabel controlId="Mail Body" label="MailBody">
+                <FloatingLabel controlId="Mail Body" label="Application Body">
                     <Form.Control
                         as="textarea" 
                         value={body} 
@@ -112,14 +124,14 @@ const EditMail = () => {
                     />
                 </FloatingLabel>
 
-                <Form.Label><h6 className='send_to'>Receiver</h6></Form.Label>
+                <Form.Label className='days'><h6 className='send_to'>Receiver</h6></Form.Label>
                     <Form.Select value={receiverId} onChange={handleSelectAdmin}>
-                        {admins ? (
+                        {admins?.length ? (
                             admins.map(admin=>(
         
                                 <option className='admin_box' key={admin._id} value={admin._id} > {admin.name} </option>
                             ))
-                            ) : <option disabled selected>No admin found for this school</option>
+                            ) : <option disabled selected value=''>No admin found for this school</option>
                         }
                     </Form.Select>
 
@@ -127,13 +139,19 @@ const EditMail = () => {
 
                 { err ? <p>{err}</p> : <></> }
 
-                <Button className='primary' onClick={handleUpdate}>Update Mail</Button>
+                {admins?.length ? (
+                    <Button className='primary' onClick={handleUpdate}><div className='subhead1'>Update Mail</div></Button>
+                ) : <Button variant='secondary' dislabled><div classNmae='subhead1'>Update Mail</div></Button>}
             
 
         </div>
         </div>
         </div>
+        </div>
+        </div>
+        </div>
+   
     )
 }
 
-export default EditMail
+export default EditMail
