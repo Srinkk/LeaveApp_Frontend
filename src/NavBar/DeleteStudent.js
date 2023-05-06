@@ -38,27 +38,31 @@ const DeleteStudent = () => {
 
     return (
         <div>
-            <NavBarDashBoard
-                student_id={_id}
-                admin_id=''
-            />
-            <FormContainer>
-                <Form.Group controlId="inst_name">
-                    <Form.Label><h4>Please Enter Your Password</h4></Form.Label>
-                    <Form.Control
-                        type='password'
-                        name="password"
-                        placeholder='password'
-                        value={password}
-                        onChange={(e)=>setPassword(e.target.value)}
-                    />
-                </Form.Group>
+        <div className='bagc'>
+        <NavBarDashBoard
+            student_id={_id}
+            admin_id=''
+        />
+        <FormContainer>
+            <div className='form_head'>
+            <Form.Group controlId="inst_name">
+                <Form.Label><h4>Please Enter Your Password</h4></Form.Label>
+                <Form.Control
+                    type='password'
+                    name="password"
+                    placeholder='password'
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
+            </Form.Group>
 
-                {err?.length ? (<p>{err}</p>) : <></>}	
+            {err?.length ? (<p>{err}</p>) : <></>}	
 
-                <Button onClick={handleDelete}>Confirm Password</Button>
-            </FormContainer>
+            <Button className='confirm_pw' onClick={handleDelete}>Confirm Password</Button>
+            </div>
+        </FormContainer>
         </div>
+    </div>
     )
 }
 
