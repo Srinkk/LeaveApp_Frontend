@@ -34,28 +34,32 @@ const DeleteAdmin = () => {
 
     return (
         <div>
-            <NavBarDashBoard
-                student_id=''
-                admin_id={_id}
-            />
-            <div className='confirm_box'>
-            <FormContainer>
-                <Form.Group controlId="password">
-                    <Form.Label><h4>Please Enter Your Password</h4></Form.Label>
-                    <Form.Control
-                        type='password'
-                        name="password"
-                        value={password}
-                        onChange={(e)=>setPassword(e.target.value)}
-                    />
-                </Form.Group>
+        <div className='bagc'>
+        <NavBarDashBoard
+            student_id=''
+            admin_id={_id}
+        />
+        <FormContainer>
+            <div className='form_head'>
+            
+            <Form.Group controlId="inst_name">
+                <Form.Label><h4>Please Enter Your Password</h4></Form.Label>
+           
+                <Form.Control
+                    type='password'
+                    name="password"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
+            </Form.Group>
 
-                {err?.length ? (<p>{err}</p>) : <></>}
+            {err?.length ? (<p>{err}</p>) : <></>}
 
-                <Button onClick={handleDelete} className='confirm'>Confirm Password</Button>
-            </FormContainer>
+            <Button className='confirm_pw' onClick={handleDelete}>Confirm Password</Button>
             </div>
+        </FormContainer>
         </div>
+    </div>
     )
 }
 
