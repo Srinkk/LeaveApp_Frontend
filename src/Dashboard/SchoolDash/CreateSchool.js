@@ -32,14 +32,15 @@ const CreateSchool = () => {
     return (
         <div>
         <NavBar/>
+        <div className='bagc'>
         <div className='justify-content-center'>
 
-            <FormContainer>
-                <h2>Enter the details</h2>
+            <FormContainer><div className='form_head'>
+                <h2>Enter the details</h2></div>
                 <hr className='md-3'/>
                 <Form method='POST'>
                     <Form.Group controlId='Name'></Form.Group>
-                    <Form.Label><h5>School/College Name</h5></Form.Label>  
+                    <Form.Label><div className='subhead1'><h5>School/College Name</h5></div></Form.Label>  
 
                     <Form.Control
                     type='digit' placeholder='School/College Name' name='name' value={name}
@@ -47,14 +48,14 @@ const CreateSchool = () => {
                     </Form.Control>
 
                     <Form.Group controlId='contact'></Form.Group>
-                    <Form.Label><h5>Contact No</h5></Form.Label>        
+                    <Form.Label><div className='subhead1'><h5>Contact No</h5></div></Form.Label>        
                     
                     <Form.Control
                     type='text' placeholder='' name='contact' onChange={e=>setContact(e.target.value)} value={contact}>
                     </Form.Control>
 
                     <Form.Group controlId='code'></Form.Group>
-                    <Form.Label><h5>Code</h5></Form.Label>
+                    <Form.Label><div className='subhead1'><h5>Code</h5></div></Form.Label>
 
                     <Form.Control
                     type='text' placeholder='The code must be provided to all the admins' name='code' onChange={e=>setCode(e.target.value)} value={code}>
@@ -65,11 +66,13 @@ const CreateSchool = () => {
 
                 {err?.length ? (<p>{err}</p>) : <></>}
 
-                <Button variant='secondary' type='submit' onClick={handleSubmit}>Create New School</Button>
+                <Button variant='secondary' type='submit' onClick={handleSubmit}><div>Create New School</div></Button>
 
             </FormContainer>
+            </div>
         </div>
     </div>
+
 
     )
 
