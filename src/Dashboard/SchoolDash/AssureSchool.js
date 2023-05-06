@@ -10,9 +10,15 @@ const AssureSchool = () => {
     return (
         <>
             <NavBar/>
-            <h2>New Institute {schoolName} is successfully created!</h2>
+            <div className='background'>
+             <div classsName='dashboard_overlay'>
+            <h2><div classname='head1'>New Institute {schoolName} is successfully created!</div></h2>
+            <div className='subhead1'>
             <p><a href="/home">Go Back to Home Page</a></p>
             <p><a href="/signup/admin">Signup As An Admin</a></p>
+            </div>
+            </div>
+            </div>
         </>
     )
 }
