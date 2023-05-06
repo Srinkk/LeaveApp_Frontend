@@ -58,7 +58,8 @@ const EditStudent = () => {
             admin_id = {''}
         />
         <FormContainer>
-            <h2><div className='head1'>Edit Profile</div></h2>
+            <h2><div className='form_head'>Edit Profile</div></h2>
+            <hr className='md-3'/>
             <Form.Group controlId="id">
             <div className='subhead1'>
                 <Form.Label><h4>Student Id</h4></Form.Label>
@@ -108,9 +109,10 @@ const EditStudent = () => {
                 </div>
             </Form.Group>
 
-            {err?.length ? (<p>{err}</p>) : <></>}	
+            {err?.length ? (<p>{err}</p>) : <></>}
+            <hr className='md-3'/>	
 
-            <Button onClick={handleUpdate}><div className='subhead1'>Update Details</div></Button>
+            <Button onClick={handleUpdate}><div className='update1'>Update Details</div></Button>
 
         </FormContainer>
         </div>
