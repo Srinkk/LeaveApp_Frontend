@@ -1,8 +1,9 @@
 import axios from 'axios'
-import NavBar from '../../NavBar/NavBar'
+
 import { FormContainer } from '../../Forms/FormContainer'
 import { Form } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import NavBarDashBoard from '../../NavBar/NavBarDashboard'
 
 import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -52,46 +53,52 @@ const EditSchool = () => {
 
     return (
         <div>
-        <NavBar/>
-        <div className='justify-content-center'>
+        <div className='bagc'>
+    <NavBarDashBoard
+        student_id=''
+        admin_id={admin_id}
+    />
+    <div className='justify-content-center'>
 
-            <FormContainer>
-                <h2>Enter the details</h2>
-                <hr className='md-3'/>
-                <Form method='POST'>
-                    <Form.Group controlId='Name'></Form.Group>
-                    <Form.Label><h5>School/College Name</h5></Form.Label>  
+        <FormContainer>
+            <h2><div className='form_head'>Enter the details</div></h2>
+            <hr className='md-3'/>
+            <Form method='POST'>
+                <div className='subhead1'>
+                <Form.Group controlId='Name'></Form.Group>
+                <Form.Label><h5>School/College Name</h5></Form.Label>  
 
-                    <Form.Control
-                    type='digit' placeholder='Institute Name' name='name' value={name}
-                    onChange={e=>setName(e.target.value)}>
-                    </Form.Control>
+                <Form.Control
+                type='digit' placeholder='Institute Name' name='name' value={name}
+                onChange={e=>setName(e.target.value)}>
+                </Form.Control>
 
-                    <Form.Group controlId='contact'></Form.Group>
-                    <Form.Label><h5>Contact No</h5></Form.Label>        
-                    
-                    <Form.Control
-                    type='text' placeholder='' name='contact' onChange={e=>setContact(e.target.value)} value={contact}>
-                    </Form.Control>
+                <Form.Group controlId='contact'></Form.Group>
+                <Form.Label><h5>Contact No</h5></Form.Label>        
+                
+                <Form.Control
+                type='text' placeholder='Contact No. of the Institute' name='contact' value={contact} onChange={e=>setContact(e.target.value)}>
+                </Form.Control>
 
-                    <Form.Group controlId='code'></Form.Group>
-                    <Form.Label><h5>Code</h5></Form.Label>
+                <Form.Group controlId='code'></Form.Group>
+                <Form.Label><h5>Code</h5></Form.Label>
 
-                    <Form.Control
-                    type='text' placeholder='The code must be provided to all the admins' name='code' onChange={e=>setCode(e.target.value)} value={code}>
-                    </Form.Control>
-                    
-                </Form>
-                <hr className='md-3'/>
+                <Form.Control
+                type='text' placeholder='The code must be provided to all the admins' name='code' onChange={e=>setCode(e.target.value)} value={code}>
+                </Form.Control>
+                </div>
+                
+            </Form>
+            <hr className='md-3'/>
 
-                {err?.length ? (<p>{err}</p>) : <></>}
+            {err?.length ? (<p>{err}</p>) : <></>}
 
-                <Button variant='secondary' type='submit' onClick={handleEdit}>Update Details</Button>
+            <Button className='update1' type='submit' onClick={handleEdit}>Update Details</Button>
 
-            </FormContainer>
-        </div>
+        </FormContainer>
     </div>
-
+    </div>
+</div>
     )
 }
 
