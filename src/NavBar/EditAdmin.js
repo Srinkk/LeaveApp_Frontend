@@ -59,7 +59,8 @@ const EditAdmin = () => {
                 admin_id = {_id}
             />
             <FormContainer>
-                <h2><div className='head1'>Edit Profile</div></h2>
+                <h2><div className='form_head'>Edit Profile</div></h2>
+                <hr className="md-3"/>
                 <Form.Group controlId="id"><div className='subhead1'>
                     <Form.Label><h4>Admin Id</h4></Form.Label>
                     <Form.Control
@@ -118,8 +119,8 @@ const EditAdmin = () => {
                 </Form.Group>
 
                 {err?.length ? (<p>{err}</p>) : <></>}	
-
-                <button className='update1' onClick={handleUpdate}>Update Details</button>
+                <hr className="md-3"/>
+                <Button className='update1' onClick={handleUpdate}>Update Details</Button>
 
             </FormContainer>
             </div>
