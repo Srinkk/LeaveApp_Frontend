@@ -30,7 +30,7 @@ const StudentDashboard = () => {
 				student_id = {student_id}
 				admin_id = ''
 			/> 
-			<div  className='dashboard_bg'>
+			<div  className='dashboard_s_bg'>
 			<div className='dashboard_overlay' >
 			
 			<div className='head'>
