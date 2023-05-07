@@ -77,7 +77,7 @@ const Compose = () => {
 			<div className="justify-content-center">
 			<div className='bagc'>
 				
-					<div className='dashboard_bg'>
+					<div className='dashboard_s_bg'>
 					 <div className='dashboard_overlay'>
 					<h2><div className='form_head1'>Compose your Application</div></h2>
 					<hr className='md-6'/>
@@ -123,7 +123,7 @@ const Compose = () => {
 						</Form>
 						
 
-						{ err ? <p>{err}</p> : <></>}
+						{ err ? <p className='no_mail'>{err}</p> : <></>}
 
 						<button onClick={handleSubmit} className='send' >Send</button>
 					
